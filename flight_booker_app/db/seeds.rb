@@ -5,3 +5,28 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+#<Flight id: nil, created_at: nil, updated_at: nil, origin_code: nil, destination_code: nil>
+
+
+Flight.create!(origin_code: "DFW",
+               destination_code: "NYC")
+
+Flight.create!(origin_code: "SFO",
+               destination_code: "NYC")
+
+Flight.create!(origin_code: "DFW",
+               destination_code: "NYC")
+
+Flight.create!(origin_code: "SFO",
+               destination_code: "NYC")
+
+Flight.create!(origin_code: "DFW",
+               destination_code: "NYC")
+
+Flight.create!(origin_code: "SFO",
+               destination_code: "MDW")
+
+Flight.create!(origin_code: "ORD",
+               destination_code: "NYC")
