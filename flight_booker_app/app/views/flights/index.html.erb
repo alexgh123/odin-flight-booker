@@ -1,12 +1,16 @@
 <h3>What is up yo? Here is all dem flights!</h3>
 
 <% @flights.each do |flight| %>
-  <li>
-    <%= flight.id %>
-    <%= flight.origin_code %>
-    <%= flight.destination_code %>
-    <%= flight.hours %> hours
-    <%= flight.minutes %> minutes
-    Departure Time: <%= flight.departure_date_time %>
-  </li>
+  <ul>
+    <li>Flight Number:<%= flight.id %></li>
+    <li>Origin: <%= @airports.find(flight.origin_airport_id).airport_code %></li>
+    <li>Destination: <%= @airports.find(flight.destination_airport_id).airport_code %></li>
+    <li>Flight time: <%= flight.hours %> hours <%= flight.minutes %> minutes</li>
+
+    <li>Departure Time: <%= flight.departure_date_time %></li>
+  </ul>
 <% end %>
+
+
+
+<!-- @aiports.find(flight.origin_id)  -->
