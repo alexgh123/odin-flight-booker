@@ -18,7 +18,7 @@ Destination:
   <select>
       <% @flights.each do |flight| %>
         <ul>
-          <option>
+          <option value="<% flight.destination_airport_id %>">
              <%= @airports.find(flight.destination_airport_id).airport_code %>
           </option>
         </ul>
@@ -31,7 +31,7 @@ Departure Month:
   <select>
       <% @flights.each do |flight| %>
         <ul>
-          <option>
+          <option value="<% flight.departure_date_time.month %>">
             <%= flight.departure_date_time.month %>
           </option>
         </ul>
@@ -44,7 +44,7 @@ Departure Day:
   <select>
       <% @flights.each do |flight| %>
         <ul>
-          <option>
+          <option value="<%flight.departure_date_time.day  %>" >
             <%= flight.departure_date_time.day %>
           </option>
         </ul>
