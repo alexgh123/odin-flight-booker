@@ -40,6 +40,16 @@ Departure Date:
 </li>
 
 <li>
+  Whatever month you want!
+  <%= select_month(Date.today) %>
+</li>
+
+<li>
+  Whatever day you want!
+  <%= select_day(Date.today) %>
+</li>
+
+<li>
   Number of pasengers:
   <select>
     <ul>
