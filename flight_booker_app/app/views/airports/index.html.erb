@@ -1,0 +1,10 @@
+<h3>What is up yo? Here is all dem airports!</h3>
+
+<% @airports.each do |airport| %>
+  <li>
+    <%= airport.id %>
+    <%= airport.airport_code %>
+    <%= airport.airport_name %>
+
+  </li>
+<% end %>
