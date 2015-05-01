@@ -32,7 +32,7 @@ Departure Date:
       <% @flights.each do |flight| %>
         <ul>
           <option>
-            <%= flight.departure_date_time %>
+            <%= flight.departure_date_time.strftime("%m/%d/%Y") %>
           </option>
         </ul>
       <% end %>
