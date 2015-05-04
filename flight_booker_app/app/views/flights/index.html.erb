@@ -1,70 +1,22 @@
 <h3>What is up yo? Where you want to go???</h3>
 
+<% @flights.each do |flight| %>
+      <li>Origin: <%= Airport.find(flight.origin_airport_id).airport_code %>
+      Destination: <%= Airport.find(flight.destination_airport_id).airport_code %></li>
+
+    <% end %>
+
+
+
+
+<br><br>
 <li>
 Origin:
   <select>
-      <% @flights.each do |flight| %>
-        <ul>
-          <option>
-             <%= @airports.find(flight.origin_airport_id).airport_code %>
-          </option>
-        </ul>
-      <% end %>
+    <% @flights.each do |flight| %>
+      <%= options_for_select([[ @airports.find(flight.origin_airport_id).airport_code ,flight.origin_airport_id]]) %>
+    <% end %>
   </select>
 </li>
 
-<li>
-Destination:
-  <select>
-      <% @flights.each do |flight| %>
-        <ul>
-          <option value="<% flight.destination_airport_id %>">
-             <%= @airports.find(flight.destination_airport_id).airport_code %>
-          </option>
-        </ul>
-      <% end %>
-  </select>
-</li>
-
-<li>
-Departure Month:
-  <select>
-      <% @flights.each do |flight| %>
-        <ul>
-          <option value="<% flight.departure_date_time.month %>">
-            <%= flight.departure_date_time.month %>
-          </option>
-        </ul>
-      <% end %>
-  </select>
-</li>
-
-<li>
-Departure Day:
-  <select>
-      <% @flights.each do |flight| %>
-        <ul>
-          <option value="<%flight.departure_date_time.day  %>" >
-            <%= flight.departure_date_time.day %>
-          </option>
-        </ul>
-      <% end %>
-  </select>
-</li>
-
-
-
-
-<li>
-  Number of pasengers:
-  <select>
-    <ul>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </ul>
-  </select>
-</li>
-
-<!-- id: 7, created_at: "2015-09-21 15:38:52", updated_at: "2015-07-01 15:38:52", hours: 7, minutes: 5, departure_date_time: "2015-09-01 15:38:52", origin_airport_id: 1, destination_airport_id: 2 -->
+<%= submit_tag "Search", name:nil %>
