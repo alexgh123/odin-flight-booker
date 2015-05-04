@@ -1,35 +1,21 @@
 <h3>What is up yo? Where you want to go???</h3>
 
 
-<%= form_tag flights_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
 
+
+<%= form_tag root_path, method: "get" do %>
+  <p>
+    <%= hidden_field_tag :search %>
+
+    From: <%= select_tag :from, options_for_select(@airport_codes, params[:from] ) %>
+
+    To: <%= select_tag :to, options_for_select(@airport_codes, params[:to]) %>
+
+    Number of passengers: <%= select_tag :num_passengers, options_for_select(@num_passengers, params[:num_passengers]) %>
+
+
+
+    <%= submit_tag "Search", name: nil %>
+  </p>
 <% end %>
 
-
-
-
-
-<% @flights.each do |flight| %>
-      <li>Origin: <%= Airport.find(flight.origin_airport_id).airport_code %>
-      Destination: <%= Airport.find(flight.destination_airport_id).airport_code %></li>
-
-    <% end %>
-
-
-
-
-<br><br>
-<li>
-Origin:
-  <select>
-    <% @flights.each do |flight| %>
-      <%= options_for_select([[ @airports.find(flight.origin_airport_id).airport_code ,flight.origin_airport_id]]) %>
-    <% end %>
-  </select>
-</li>
-
-<%= submit_tag "Search", name:nil %>
