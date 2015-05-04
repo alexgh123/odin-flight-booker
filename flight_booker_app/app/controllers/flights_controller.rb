@@ -2,7 +2,7 @@ class FlightsController < ApplicationController
   def index
     @flights = Flight.all
     @airports = Airport.all
-
+    @dates = Flight.flight_dates
   end
 
    def index

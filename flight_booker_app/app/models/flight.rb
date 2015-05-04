@@ -17,4 +17,6 @@ class Flight < ActiveRecord::Base
   end
 
 
+
+
 end
