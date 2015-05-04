@@ -1,5 +1,18 @@
 <h3>What is up yo? Where you want to go???</h3>
 
+
+<%= form_tag flights_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+
+<% end %>
+
+
+
+
+
 <% @flights.each do |flight| %>
       <li>Origin: <%= Airport.find(flight.origin_airport_id).airport_code %>
       Destination: <%= Airport.find(flight.destination_airport_id).airport_code %></li>
