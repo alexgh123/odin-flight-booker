@@ -11,9 +11,7 @@ class FlightsController < ApplicationController
     # @dates = Flight.flight_dates
   end
 
-  def create
-    #why am i making this?
-  end
+
 
 
 end
