@@ -7,7 +7,7 @@ class Flight < ActiveRecord::Base
   def self.search(params)
     if params[:search]
       Flight.where(origin_airport_id: params[:from], destination_airport_id: params[:to])
-            .includes(:from_airport, :to_airport)
+
     end
   end
 
