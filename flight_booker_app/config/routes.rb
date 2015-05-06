@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'passengers' => "passengers#index"
   get 'passengers/:id' => 'passengers#show'
 
+  resources 'bookings'
+
 
 
   # Example of regular route:
