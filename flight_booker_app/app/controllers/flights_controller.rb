@@ -8,7 +8,7 @@ class FlightsController < ApplicationController
     @flights = Flight.search(params)
     @airport_codes = Airport.all.collect { |a|  [a.airport_code, a.id] }
     @num_passengers = (1..4).to_a.collect { |x| [x, x] }
-    @dates = ["today", "tmrw", "yesterday"]
+    @dates = Flight.flight_date_time
   end
 
 

@@ -16,6 +16,18 @@ class Flight < ActiveRecord::Base
     where(departure_date_time: date.beginning_of_day..date.end_of_day)
   end
 
+  def self.flight_date_time
+    all.collect {|f| [f.formatted_date, f.formatted_time]}
+  end
+
+  def formatted_date
+    departure_date_time.to_date.strftime("%m/%d/%y")
+  end
+
+  def formatted_time
+    departure_date_time.strftime("%I:%M%p")
+  end
+
 
 
 
