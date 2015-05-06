@@ -1,6 +1,9 @@
 <h3>What is up yo? Where you want to go???</h3>
 
-
+<%= @dates[0] %>
+<%= @dates[1] %>
+<%= @dates[2] %>
+<%= @dates[4] %>
 
 
 <%= form_tag root_path, method: "get" do %>
@@ -15,6 +18,8 @@
     Number of passengers: <%= select_tag :num_passengers, options_for_select(@num_passengers, params[:num_passengers]) %>
 
     Dates: <%= select_tag :date, options_for_select(@dates, params[:date]) %>
+
+
 
 
 
