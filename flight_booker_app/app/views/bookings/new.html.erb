@@ -4,3 +4,21 @@ it will take:<br>
 <li> the number of passengers from the last page</li>
 <li> the flight number</li>
 <li> some other stuff?</li>
+
+new attendees right here!<br><br>
+
+<%= form_for @booking do |f| %>
+  <ul>
+    <li>
+      Travelers for  "(enter flight info)""
+    </li><br>
+    <li>
+      <%= f.label :flight_id, "user you wish add" %>
+      <%= f.text_field :flight_id %>
+    </li>
+    <li>hidden flight_id attribute here next line</li>
+     <!-- erbTag f.hidden_field :flight_id, :value => @flight.id  -->
+    <%= f.submit "Book it!"%>
+
+  </ul>
+<% end %>
