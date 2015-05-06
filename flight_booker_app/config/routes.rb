@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get 'airports' => "airports#index"
   get 'flights' => "flights#index"
 
+  get 'passengers' => "passengers#index"
+  get 'passengers/:id' => 'passengers#show'
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
