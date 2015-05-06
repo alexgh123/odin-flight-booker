@@ -1,0 +1,7 @@
+<% @passengers.each do |passenger| %>
+
+  <li>Name:<%= User.find(passenger.name).name %></li>
+  <li>User ID: <%= passenger.id %> </li>
+
+
+<% end %>
