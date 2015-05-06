@@ -17,7 +17,7 @@
 
 
 
-    <%= submit_tag "Search", name: nil %>
+    <br><br><%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
 
@@ -29,5 +29,17 @@
   <% end %>
 
 <% if params[:magic] %>
-  you are the smartest person in the world
+  <br><br>(Oh! and hey! you are the smartest person in the world)
 <% end %>
+
+
+
+
+  <!-- = form_tag new_booking_path, method: "get" do  -->
+
+    <!-- = render @flights  -->
+    <!-- = hidden_field_tag :num_passengers, params[:num_passengers]  -->
+    <!-- = submit_tag "Select this flight", name: nil  -->
+
+   <!-- end  -->
+
