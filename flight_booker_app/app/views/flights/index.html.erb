@@ -23,10 +23,15 @@
 
 <% if params[:search] && !@flights.empty? %>
 
+  <%= form_tag new_booking_path, method: "get" do %>
+
     <%= render @flights %>
     <%= hidden_field_tag :num_passengers, params[:num_passengers] %>
     <%= submit_tag "Select this flight", name: nil %>
+
   <% end %>
+
+<% end %>
 
 
 
