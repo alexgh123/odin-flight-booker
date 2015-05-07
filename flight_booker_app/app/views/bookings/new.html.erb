@@ -1,23 +1,14 @@
 yo, you is creating a new booking on this page
 
-it will take:<br>
-<li> the number of passengers from the last page</li>
-<li> the flight number</li>
-<li> some other stuff?</li>
+
 
 new attendees right here!<br><br>
 
 <%= form_for @booking do |f| %>
   <ul>
-    <li>
-      Travelers for  flight number <%= @flight.id %><br>
-      Service from <%= @origin_airport %> to <%= @destination_airport %><br>
-      On <%= @flight.departure_date_time.to_date.strftime("%A %B %Y") %><br>
-      At <%= @flight.departure_date_time.to_date.strftime("%I:%M %p") %>
+    <%= render "flights/flight_detail" %><br>
 
-
-
-    </li><br>
+    <li>Number of passengers: <%= params[:num_passengers] %></li>
     <li>
       <%= f.label :flight_id, "this chnges flight id, bad!" %>
       <%= f.text_field :flight_id %>
