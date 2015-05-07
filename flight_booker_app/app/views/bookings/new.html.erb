@@ -10,10 +10,16 @@ new attendees right here!<br><br>
 <%= form_for @booking do |f| %>
   <ul>
     <li>
-      Travelers for  "(enter flight info)""
+      Travelers for  flight number <%= @flight.id %><br>
+      Service from <%= @origin_airport %> to <%= @destination_airport %><br>
+      On <%= @flight.departure_date_time.to_date.strftime("%A %B %Y") %><br>
+      At <%= @flight.departure_date_time.to_date.strftime("%I:%M %p") %>
+
+
+
     </li><br>
     <li>
-      <%= f.label :flight_id, "user you wish add" %>
+      <%= f.label :flight_id, "this chnges flight id, bad!" %>
       <%= f.text_field :flight_id %>
     </li>
     <li>hidden flight_id attribute here next line</li>
