@@ -1,0 +1,20 @@
+new passenger page
+
+
+<%= form_for @passenger do |f| %>
+  <ul>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+
+    booking id w/ passenger is:<br>
+     <%= params[:booking_id] %>
+
+    <br><br>
+
+
+      <%= f.submit "Create my passenger"%>
+  </ul>
+
+<% end %>

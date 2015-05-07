@@ -2,3 +2,7 @@ hey, booking is here!<br>
 
 <li>booking id: <%= @booking.id %></li>
 <li>booking flight id: <%= @booking.flight_id %></li>
+
+Add passengers to this booking:
+
+<%= link_to "Add passengers to this booking!", new_passenger_path({:booking_id => @booking.id}) %>
