@@ -9,13 +9,12 @@ new attendees right here!<br><br>
     <%= render "flights/flight_detail" %><br>
 
     <li>Number of passengers: <%= params[:num_passengers] %></li>
-    <li>
-      <%= f.label :flight_id, "this chnges flight id, bad!" %>
-      <%= f.text_field :flight_id %>
-    </li>
-    <li>hidden flight_id attribute here next line</li>
-     <!-- erbTag f.hidden_field :flight_id, :value => @flight.id  -->
+
+    <%= f.hidden_field :flight_id, :value => @flight.id %>
+
+
     <%= f.submit "Book this flight!"%>
+
     <!-- some kind of call to take this flight off database would happen here -->
 
   </ul>
