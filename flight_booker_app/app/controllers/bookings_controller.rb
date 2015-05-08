@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @flight = Flight.find(params[:flight_id])unless params[:flight_id].nil?
 
-    @passenger =  Passenger.new
+    params[:passengers].to_i.times { @booking.passengers.build }
 
     @origin_airport =  Airport.find(@flight.origin_airport_id).airport_name
     @destination_airport = Airport.find(@flight.destination_airport_id).airport_name
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
 
    def create
     @booking = Booking.create(booking_params)
-    # @event = Event.find(params[:event_id])
+
     if @booking.save
       flash[:success] = "booking created!"
       redirect_to @booking

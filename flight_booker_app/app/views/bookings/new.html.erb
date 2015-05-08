@@ -13,10 +13,11 @@ new attendees right here!<br><br>
     <%= f.hidden_field :flight_id, :value => @flight.id %>
 
     <hr>
-     <%= f.fields_for @passenger do |passenger_form| %>
+
+     <%= f.fields_for :passengers do |passenger_form| %>
     Name: <%= passenger_form.text_field :name %>
 
-    <br />
+    <br/>
     <% end %>
 
   <hr>
