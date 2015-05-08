@@ -1,5 +1,9 @@
-new passenger page
+<h1> Enter passenger info for this flight: </h1>
+<br><br>
 
+<h3>
+  <%= render 'flights/flight_detail' %>
+</h3><br><br>
 
 <%= form_for @passenger do |f| %>
   <ul>
@@ -8,12 +12,9 @@ new passenger page
       <%= f.text_field :name %>
     </li>
 
-    booking id w/ passenger is:<br>
-     <%= params[:booking_id] %>
-
     <br><br>
 
-    <%= f.hidden_field :booking_id, :value => params[:booking_id] %>
+    <%= f.hidden_field :flight_id, :value => params[:flight_id] %>
 
       <%= f.submit "Create my passenger"%>
 

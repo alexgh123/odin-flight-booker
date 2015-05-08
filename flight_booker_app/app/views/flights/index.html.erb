@@ -13,17 +13,13 @@
 
     Dates: <%= select_tag :date, options_for_select(@dates, params[:date]) %>
 
-
-
-
-
     <br><br><%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
 
 <% if params[:search] && !@flights.empty? %>
 
-  <%= form_tag new_booking_path, method: "get" do %>
+  <%= form_tag new_passenger_path, method: "get" do %>
 
     <%= render @flights %>
     <%= hidden_field_tag :num_passengers, params[:num_passengers] %>
