@@ -19,7 +19,7 @@ class Flight < ActiveRecord::Base
   end
 
   def self.flight_date_time
-    all.collect {|f| [f.formatted_date, f.formatted_time]}
+    all.collect {|f| [f.formatted_date, f.formatted_time]}.uniq
   end
 
   def formatted_date
