@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @flight = Flight.find(params[:flight_id])unless params[:flight_id].nil?
 
-    params[:passengers].to_i.times { @booking.passengers.build }
+     @booking.passengers.build
 
     @origin_airport =  Airport.find(@flight.origin_airport_id).airport_name
     @destination_airport = Airport.find(@flight.destination_airport_id).airport_name
@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
   end
 
    def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
 
     if @booking.save
       flash[:success] = "booking created!"
@@ -40,7 +40,7 @@ class BookingsController < ApplicationController
 
   private
     def booking_params
-      params.require(:booking).permit(:flight_id)
+      params.require(:booking).permit(:flight_id, passenger_attributes: [:name])
     end
 
 
