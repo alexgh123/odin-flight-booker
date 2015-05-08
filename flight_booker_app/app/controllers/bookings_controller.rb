@@ -3,12 +3,16 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @flight = Flight.find(params[:flight_id])unless params[:flight_id].nil?
-    @num_passengers = params[:num_passengers]
+
+    params[:num_passengers].to_i.times { @booking.passengers.build }
     @origin_airport =  Airport.find(@flight.origin_airport_id).airport_name
     @destination_airport = Airport.find(@flight.destination_airport_id).airport_name
-    @num_passengers.to_i.times { @booking.passengers.build }
+
     redirect_to root_path if params[:flight_id].nil?
   end
+
+
+
 
 
 
