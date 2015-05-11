@@ -6,8 +6,8 @@ class BookingsController < ApplicationController
 
      @booking.passengers.build
 
-    @origin_airport =  Airport.find(@flight.origin_airport_id).airport_name
-    @destination_airport = Airport.find(@flight.destination_airport_id).airport_name
+    @origin_airport =  @flight.origin_airport
+    @destination_airport = @flight.destination_airport
 
     redirect_to root_path if params[:flight_id].nil?
   end

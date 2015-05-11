@@ -3,6 +3,9 @@ class Booking < ActiveRecord::Base
   belongs_to :flight, class_name: "Flight"
   belongs_to :passenger, class_name: "Passenger"
 
+  has_many :passengers
+  accepts_nested_attributes_for :passengers
+
   # belongs_to :flight
   # belongs_to :passenger
   # has_one :flight # on flight id?
