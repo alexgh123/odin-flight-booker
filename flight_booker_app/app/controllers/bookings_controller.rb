@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
 
   def new
-    @booking = Booking.new
     @flight = Flight.find(params[:flight_id])unless params[:flight_id].nil?
+    @booking = @flight.bookings.build
 
-     @booking.passengers.build
+    params[:num_passengers].to_i.times { @booking.passengers.build }
+
 
     @origin_airport =  @flight.origin_airport
     @destination_airport = @flight.destination_airport

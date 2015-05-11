@@ -1,26 +1,23 @@
 yo, you is creating a new booking on this page
-
-
+<br>
+<%= render "flights/flight_detail" %><br>
 
 new attendees right here!<br><br>
 
 <%= form_for @booking do |f| %>
   <ul>
-    <%= render "flights/flight_detail" %><br>
+
 
     <li>Number of passengers: <%= params[:num_passengers] %></li>
 
     <%= f.hidden_field :flight_id, :value => @flight.id %>
 
-    <hr>
-    passengers object?<br>
-    <%= :passengers %>
-    <hr>
 
-     <%= f.fields_for :passengers do |passenger_form| %>
-    Name: <%= passenger_form.text_field :name %>
 
-    <br/>
+    <%= f.fields_for :passengers do |passenger_form| %>
+      Passenger Name: <%= passenger_form.text_field :name %>
+
+      <br/>
     <% end %>
 
 
