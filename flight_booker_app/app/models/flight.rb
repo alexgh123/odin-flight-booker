@@ -1,10 +1,7 @@
 class Flight < ActiveRecord::Base
-  has_one :airport, foreign_key: "origin_airport_id"
-  has_one :airport, foreign_key: "desination_airport_id"
-  # destination and origin: !== CANT BE EQUAL
-  has_many :bookings
-  has_many :passengers, :through => :bookings
 
+  belongs_to :origin_airport, class_name: "Airport"
+  belongs_to :destination_airport, class_name: "Airport"
 
   def self.search(params)
     if params[:search]

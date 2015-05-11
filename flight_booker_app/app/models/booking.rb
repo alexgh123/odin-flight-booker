@@ -1,5 +1,14 @@
 class Booking < ActiveRecord::Base
-  has_many :passengers
-  has_many :flights
-  accepts_nested_attributes_for :passengers
+  # belongs_to :flight
+  # belongs_to :passenger
+  has_one :flight # on flight id?
+  # accepts_nested_attributes_for :passengers
 end
+
+
+# class Booking < ActiveRecord::Base
+#   belongs_to :flight
+#   has_many :tickets
+#   has_many :passengers, :through => :tickets
+#   accepts_nested_attributes_for :passengers
+# end
