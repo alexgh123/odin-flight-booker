@@ -3,6 +3,12 @@ class Flight < ActiveRecord::Base
   belongs_to :origin_airport, class_name: "Airport"
   belongs_to :destination_airport, class_name: "Airport"
 
+  has_many :bookings
+  has_many :passengers, through: :bookings
+
+
+
+
   def self.search(params)
     if params[:search]
       Flight.where(origin_airport_id: params[:from], destination_airport_id: params[:to])
