@@ -1,6 +1,6 @@
 
-      flight number <%= @flight.id %><br>
-      Service from <%= @origin_airport.airport_name %> to <%= @destination_airport.airport_name %><br>
+      flight number <%= @flight.id %><br><br>
+      Service from:<br> <%= @origin_airport.airport_name %><br><br> Service to:<br> <%= @destination_airport.airport_name %><br><br>
       On <%= @flight.departure_date_time.to_date.strftime("%A %B %Y") %><br>
       At <%= @flight.departure_date_time.to_date.strftime("%I:%M %p") %>
     <br>
