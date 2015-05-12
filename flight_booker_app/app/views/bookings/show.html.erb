@@ -7,7 +7,7 @@ hey, booking is here!<br>
 <p>Passengers:</p>
 <ol>
 <% @booking.passengers.each do |passenger| %>
- <li> <%="x#{passenger.name}" %></li>
+ <li> <%="#{passenger.name}" %></li>
 <% end %>
 </ol>
 

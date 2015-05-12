@@ -7,10 +7,6 @@
 <%= form_for @booking do |booking_form| %>
   <ul>
 
-    <br>
-      booking.passengers... <br>
-      <%= @booking.passengers.count %>
-    <br>
 
     <%= booking_form.hidden_field :flight_id, :value => @flight.id %>
 
