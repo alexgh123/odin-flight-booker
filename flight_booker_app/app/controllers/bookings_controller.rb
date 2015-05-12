@@ -16,16 +16,8 @@ class BookingsController < ApplicationController
 
 
 
-
-
-
-  def index
-    @bookings = Booking.all
-  end
-
    def create
     @booking = Booking.new(booking_params)
-
     if @booking.save
       flash[:success] = "booking created!"
       redirect_to @booking
@@ -33,6 +25,10 @@ class BookingsController < ApplicationController
       flash[:failure] = "you are an idiot AND didn't create a booking"
       redirect_to new_booking_path
     end
+  end
+
+  def index
+    @bookings = Booking.all
   end
 
   def show

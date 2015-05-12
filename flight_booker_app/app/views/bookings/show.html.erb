@@ -2,7 +2,14 @@ hey, booking is here!<br>
 
 <li>booking id: <%= @booking.id %></li>
 <li>booking flight id: <%= @booking.flight_id %></li>
-<li>Passenger(s): <%=@booking.passengers.count %></li>
+
+
+<p>Passengers:</p>
+<ol>
+<% @booking.passengers.each do |passenger| %>
+ <li> <%="x#{passenger.name}" %></li>
+<% end %>
+</ol>
 
 
 Add passengers to this booking:
