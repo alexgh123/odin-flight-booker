@@ -6,11 +6,14 @@ class Booking < ActiveRecord::Base
   has_many :tickets
   has_many :passengers, through: :tickets
 
+  accepts_nested_attributes_for :passengers
+
+
 # has_many :patients, through: :appointments right format
 
 
   # has_many :passengers
-  # accepts_nested_attributes_for :passengers
+
 
 
 
