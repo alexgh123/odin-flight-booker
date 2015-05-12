@@ -2,14 +2,17 @@
 <br>
 <%= render "flights/flight_detail" %><br>
 
+<li>Number of passengers: <%= params[:num_passengers] %></li>
+
 <%= form_for @booking do |f| %>
   <ul>
 
-
-    <li>Number of passengers: <%= params[:num_passengers] %></li>
+    <br>
+      booking.passengers <br>
+      <%= @booking.passengers.count %>
+    <br>
 
     <%= f.hidden_field :flight_id, :value => @flight.id %>
-
 
 
     <%= f.fields_for :passengers do |passenger_form| %>
