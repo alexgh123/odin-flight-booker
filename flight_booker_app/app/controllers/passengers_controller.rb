@@ -6,6 +6,11 @@ class PassengersController < ApplicationController
 
   def index
     @passengers = Passenger.all
+    respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @passengers }
+        format.json { render :json => @passengers }
+      end
   end
 
   def new
