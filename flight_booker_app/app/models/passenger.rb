@@ -4,8 +4,8 @@ class Passenger < ActiveRecord::Base
   has_many :tickets
   has_many :bookings, through: :tickets
 
-   def as_json(options={})
-        { :name => self.name }  # NOT including the email field
+    def as_json(options={})
+        { :name => self.name }  # NOT including the other fields
     end
 
       # Option 2: Working with the default #as_json method
@@ -13,7 +13,7 @@ class Passenger < ActiveRecord::Base
       #   super(:only => [:name])
       # end
 
-      # def as_xml(options={})
+    #??? def as_xml(options={})
       #   {:name => self.name}
       # end
 

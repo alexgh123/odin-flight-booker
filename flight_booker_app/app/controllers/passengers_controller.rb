@@ -9,7 +9,7 @@ class PassengersController < ApplicationController
     respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @passengers }
-        format.json { render :json => @passengers }
+        format.json { render :json => @passengers } #only name returned
       end
   end
 
