@@ -12,8 +12,9 @@
 
 
     <%= booking_form.fields_for :passengers do |passenger_form| %>
-      Passenger Name: <%= passenger_form.text_field :name %>
       Passenger Email: <%= passenger_form.text_field :email %>
+      Passenger Name: <%= passenger_form.text_field :name %>
+
 
       <br/>
     <% end %>

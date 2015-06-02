@@ -20,7 +20,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     if @booking.save
       flash[:success] = "booking created!"
+
+
+
+      # right now i just decided to pick the first passenger's email but a scenario exists where the person who wants to receive the confirmation email is not the first passenger in the booking
+
       redirect_to @booking
+
+      PassengerMailer.flight_confirmation_email(@booking.passengers[0]).deliver_now
     else
       flash[:failure] = "you are an idiot AND didn't create a booking"
       redirect_to new_booking_path
@@ -38,7 +45,7 @@ class BookingsController < ApplicationController
 
   private
     def booking_params
-      params.require(:booking).permit(:flight_id, passengers_attributes: [:name])
+      params.require(:booking).permit(:flight_id, passengers_attributes: [:name, :email])
     end
 
 
