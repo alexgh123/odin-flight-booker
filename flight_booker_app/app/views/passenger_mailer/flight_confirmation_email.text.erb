@@ -1,10 +1,10 @@
-Thanks for booking a flight with us!, <%= @passenger.name %></h1>
-
-  You have successsfully booked a flight from ____ to ____ on (date) for (list of passengers/one passenger)
-
-  Confirmation number goes here?
-
-  Thanks for booking and have a great day!
+       You have successsfully booked a flight from
+      <%= @booking.flight.origin_airport.airport_name %>
+      to
+      <%= @booking.flight.destination_airport.airport_name %>
+       on
+       <%= @booking.flight.departure_date_time %> for
+        <%= @booking.passengers.count %> passenger(s)
 
 
 

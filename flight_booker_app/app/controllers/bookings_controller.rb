@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
 
       redirect_to @booking
 
-      PassengerMailer.flight_confirmation_email(@booking.passengers[0]).deliver_now
+      PassengerMailer.flight_confirmation_email(@booking.passengers[0], @booking).deliver_now
     else
       flash[:failure] = "you are an idiot AND didn't create a booking"
       redirect_to new_booking_path

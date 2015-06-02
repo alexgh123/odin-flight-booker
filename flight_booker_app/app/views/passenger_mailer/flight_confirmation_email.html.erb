@@ -5,12 +5,16 @@
   </head>
 
   <body>
-    <h1>Thanks for booking a flight with us!, <%= @passenger.name %></h1>
+        <h1>Thanks for booking a flight with us!, <%= @passenger.name %></h1>
     <p>
-      You have successsfully booked a flight from ____ to ____ on (date) for (list of passengers/one passenger)
+      You have successsfully booked a flight from
+      <%= @booking.flight.origin_airport.airport_name %>
+      to
+      <%= @booking.flight.destination_airport.airport_name %>
+       on
+       <%= @booking.flight.departure_date_time %> for
+        <%= @booking.passengers.count %> passenger(s)
     </p>
-    <p>Confirmation number goes here?</p>
-    <p>Thanks for booking and have a great day!</p>
   </body>
 
 </html>
