@@ -4,10 +4,25 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'flights#index'
-  get 'airports' => "airports#index"
+
   get 'flights' => "flights#index"
 
-  resources 'passengers'
+  get 'airports' => "airports#index"
+
+
+
+
+
+ # get 'passengers' => redirect('/passengers'), :as => "/flights/1"
+
+resources 'passengers' #, path: '/spinach/passengers'
+
+ # passenger GET    /passengers/:id(.:format)      passengers#show
+ #               PATCH  /passengers/:id(.:format)      passengers#update
+ #               PUT    /passengers/:id(.:format)      passengers#update
+ #               DELETE /passengers/:id(.:format)      passengers#destroy
+
+
 
   resources 'bookings'
 
