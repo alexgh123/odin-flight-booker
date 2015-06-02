@@ -3,6 +3,11 @@ hey, booking is here!<br>
 <li>booking id: <%= @booking.id %></li>
 <li>booking flight id: <%= @booking.flight_id %></li>
 
+<br>
+A confirmation email has been sent to:<br>
+<%= @booking.passengers[0].email %>
+<br>
+
 
 <p>Passengers:</p>
 <ol>
@@ -10,5 +15,3 @@ hey, booking is here!<br>
  <li> <%="#{passenger.name}" %></li>
 <% end %>
 </ol>
-
-
