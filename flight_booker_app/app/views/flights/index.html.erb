@@ -12,6 +12,14 @@
 
     Dates: <%= select_tag :date, options_for_select(@dates, params[:date]) %>
 
+    <!-- assumes date time object passed in -->
+
+      <!-- select_tag :date, options_for_select(@dates.collect{ |date| [date.to_date.strftime("%m/%d/%y"), date] })  -->
+
+
+
+
+
     <br><br><%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
