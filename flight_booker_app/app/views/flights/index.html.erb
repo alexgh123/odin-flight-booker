@@ -8,7 +8,6 @@
 
     To: <%= select_tag :to, options_for_select(@airport_codes, params[:to]) %>
 
-
     Number of passengers: <%= select_tag :num_passengers, options_for_select(@num_passengers, params[:num_passengers]) %>
 
     Dates: <%= select_tag :date, options_for_select(@dates, params[:date]) %>
@@ -16,6 +15,12 @@
     <br><br><%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
+
+<br><hr>
+search params : <%= params %>
+<br><hr>
+
+
 
 <% if params[:search] && !@flights.empty? %>
 

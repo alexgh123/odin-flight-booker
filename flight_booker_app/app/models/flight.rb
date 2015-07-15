@@ -11,7 +11,7 @@ class Flight < ActiveRecord::Base
 
   def self.search(params)
     if params[:search]
-      Flight.where(origin_airport_id: params[:from], destination_airport_id: params[:to])
+      Flight.where(origin_airport_id: params[:from], destination_airport_id: params[:to], departure_date_time: params[:date])
     end
   end
 
@@ -30,6 +30,14 @@ class Flight < ActiveRecord::Base
 
   def formatted_time
     departure_date_time.strftime("%I:%M%p")
+  end
+
+  def self.selectable_dates
+    set = Set.new
+    all.each do |flight|
+      set << flight.formatted_date
+    end
+    set.to_a
   end
 
 
