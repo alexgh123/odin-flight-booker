@@ -34,6 +34,8 @@ class Flight < ActiveRecord::Base
 
   def self.selectable_dates
     set = Set.new
+    # first use of a set object! woo
+    # https://stackoverflow.com/questions/14004325/add-element-to-an-array-if-its-not-there-already
     all.each do |flight|
       set << flight.formatted_date
     end
