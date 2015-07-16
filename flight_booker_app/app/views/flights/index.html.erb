@@ -16,9 +16,10 @@ search params : <%= params %>
 
   <div class="container">
 
+    <div><%= submit_tag "Select this flight", name: nil %></div><br>
     <%= render @flights %>
     <%= hidden_field_tag :num_passengers, params[:num_passengers] %>
-    <div><%= submit_tag "Select this flight", name: nil %></div>
+
 
   </div>
 
