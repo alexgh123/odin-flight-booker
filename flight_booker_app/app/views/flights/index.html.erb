@@ -1,32 +1,12 @@
-<h3>What is up yo? Where you want to go???</h3>
-
-<%= form_tag root_path, method: "get" do %>
-  <p>
-    <%= hidden_field_tag :search %>
-
-    From: <%= select_tag :from, options_for_select(@airport_codes, params[:from] ) %>
-
-    To: <%= select_tag :to, options_for_select(@airport_codes, params[:to]) %>
-
-    Number of passengers: <%= select_tag :num_passengers, options_for_select(@num_passengers, params[:num_passengers]) %>
-
-    Dates: <%= select_tag :date, options_for_select(@dates, params[:date]) %>
-
-    <!-- assumes date time object passed in -->
-
-      <!-- select_tag :date, options_for_select(@dates.collect{ |date| [date.to_date.strftime("%m/%d/%y"), date] })  -->
 
 
+<%= render 'search' %>
 
-
-
-    <br><br><%= submit_tag "Search", name: nil %>
-  </p>
-<% end %>
+<!-- debug stuff
 
 <br><hr>
 search params : <%= params %>
-<br><hr>
+<br><hr> -->
 
 
 
@@ -36,7 +16,7 @@ search params : <%= params %>
 
     <%= render @flights %>
     <%= hidden_field_tag :num_passengers, params[:num_passengers] %>
-    <%= submit_tag "Select this flight", name: nil %>
+    <div><%= submit_tag "Select this flight", name: nil %></div>
 
   <% end %>
 

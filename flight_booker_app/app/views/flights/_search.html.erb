@@ -1,0 +1,20 @@
+<div class="container search">
+<%= form_tag root_path, method: "get" do %>
+  <p>
+    <%= hidden_field_tag :search %>
+
+    Dates: <%= select_tag :date, options_for_select(@dates, params[:date]) %>
+
+    From: <%= select_tag :from, options_for_select(@airport_codes, params[:from] ) %>
+
+    To: <%= select_tag :to, options_for_select(@airport_codes, params[:to]) %>
+
+    Number of passengers: <%= select_tag :num_passengers, options_for_select(@num_passengers, params[:num_passengers]) %>
+
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+</div>
+<hr>
+<br>
+

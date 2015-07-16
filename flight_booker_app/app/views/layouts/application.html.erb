@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Odin Flight Booker", root_path, id: "logo" %>
+  </div>
+</header>
+
 <%= yield %>
 
 <% if params[:magic] %>
