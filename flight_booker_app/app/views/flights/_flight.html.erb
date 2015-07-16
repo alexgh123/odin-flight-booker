@@ -4,6 +4,9 @@
 
   <div class="panel-heading">
     <%= radio_button_tag 'flight_id', flight.id %>
+    <%= "Flight Number: #{flight.id}" %>
+  </div>
+  <div class="panel-body">
     <%= "From: #{Airport.find(flight.origin_airport_id).airport_name} - To: #{Airport.find(flight.destination_airport_id).airport_name}" %><br/>
   </div>
   <div class="panel-body">
