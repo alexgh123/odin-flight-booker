@@ -23,13 +23,14 @@ Airport.create!(id: 3,
                 airport_code: "SFO",
                 airport_name: "San francisco airport")
 
+Airport.create!(id: 4,
+                airport_code: "MDW",
+                airport_name: "Chicago midway")
+
 Airport.create!(id: 5,
                 airport_code: "ORD",
                 airport_name: "Chicago ohare")
 
-Airport.create!(id: 4,
-                airport_code: "MDW",
-                airport_name: "Chicago midway")
 
 # create the flights!
 
@@ -160,120 +161,244 @@ Flight.create!(origin_airport_id: 1,
                destination_airport_id: 2,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 1,
                destination_airport_id: 3,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 1,
                destination_airport_id: 4,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 1,
                destination_airport_id: 5,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 
 Flight.create!(origin_airport_id: 2,
                destination_airport_id: 1,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 2,
                destination_airport_id: 3,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 2,
                destination_airport_id: 4,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 2,
                destination_airport_id: 5,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 
 Flight.create!(origin_airport_id: 3,
                destination_airport_id: 2,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 3,
                destination_airport_id: 1,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 3,
                destination_airport_id: 4,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 3,
                destination_airport_id: 5,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 4,
                destination_airport_id: 2,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 4,
                destination_airport_id: 3,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 4,
                destination_airport_id: 1,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 4,
                destination_airport_id: 5,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 5,
                destination_airport_id: 2,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 5,
                destination_airport_id: 3,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 5,
                destination_airport_id: 4,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
 
 Flight.create!(origin_airport_id: 5,
                destination_airport_id: 1,
                hours: 33,
                minutes: 2,
-               departure_date_time: Time.zone.now)
+               departure_date_time: Time.zone.tomorrow)
+
+# more seeds for other days
+
+Flight.create!(origin_airport_id: 1,
+               destination_airport_id: 2,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 1,
+               destination_airport_id: 3,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 1,
+               destination_airport_id: 4,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 1,
+               destination_airport_id: 5,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+
+Flight.create!(origin_airport_id: 2,
+               destination_airport_id: 1,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 2,
+               destination_airport_id: 3,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 2,
+               destination_airport_id: 4,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 2,
+               destination_airport_id: 5,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+
+Flight.create!(origin_airport_id: 3,
+               destination_airport_id: 2,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 3,
+               destination_airport_id: 1,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 3,
+               destination_airport_id: 4,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 3,
+               destination_airport_id: 5,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 4,
+               destination_airport_id: 2,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 4,
+               destination_airport_id: 3,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 4,
+               destination_airport_id: 1,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 4,
+               destination_airport_id: 5,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 5,
+               destination_airport_id: 2,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 5,
+               destination_airport_id: 3,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 5,
+               destination_airport_id: 4,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
+
+Flight.create!(origin_airport_id: 5,
+               destination_airport_id: 1,
+               hours: 2,
+               minutes: 2,
+               departure_date_time: Time.zone.yesterday)
