@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'airports' => "airports#index"
   get 'flights' => "flights#index"
 
-  resources 'passengers'
 
   resources 'bookings'
 
